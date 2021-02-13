@@ -1,0 +1,64 @@
+GET http://localhost:5000
+
+###
+// Register user
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+    "name": "Abdur Rahim 2",
+    "email": "abdoerrahiem2@gmail.com",
+    "password": "abdoerrahiem2",
+    "password2": "abdoerrahiem2"
+}
+
+###
+// Get logged in user
+GET http://localhost:5000/api/auth
+auth_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1fSwiaWF0IjoxNjEwOTUzMzMxLCJleHAiOjE2MTA5NzQ5MzF9.i8GxJwpzh-19uB9IW8TnBQV3OlfF8WCkZR2rj89JVJ4
+
+###
+// Login user
+POST http://localhost:5000/api/auth
+Content-Type: application/json
+
+{
+    "email": "abdoerrahiem@gmail.com",
+    "password": "abdoerrahiem"
+}
+
+###
+// Get all contacts
+GET http://localhost:5000/api/contacts
+auth_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo2fSwiaWF0IjoxNjEwOTU0OTQ1LCJleHAiOjE2MTA5NzY1NDV9.xTcjWfgUV48CB3OHOkIT4kckeeAvzntaTSu9V2j3DZ8
+
+###
+// Add contact
+POST http://localhost:5000/api/contacts
+auth_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo2fSwiaWF0IjoxNjEwOTU0OTQ1LCJleHAiOjE2MTA5NzY1NDV9.xTcjWfgUV48CB3OHOkIT4kckeeAvzntaTSu9V2j3DZ8
+Content-Type: application/json
+
+{
+    "name": "delete",
+    "email": "delete@gmail.com",
+    "phone": "111-111-112",
+    "type": "professional"
+}
+
+###
+// Update contact
+PUT http://localhost:5000/api/contacts/3
+auth_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo2fSwiaWF0IjoxNjEwOTU0OTQ1LCJleHAiOjE2MTA5NzY1NDV9.xTcjWfgUV48CB3OHOkIT4kckeeAvzntaTSu9V2j3DZ8
+Content-Type: application/json
+
+{
+    "name": "Ronaldo",
+    "email": "ronaldo@gmail.com",
+    "phone": "2222223",
+    "type": "professional"
+}
+
+###
+// Delete contact
+DELETE http://localhost:5000/api/contacts/4
+auth_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo2fSwiaWF0IjoxNjEwOTU0OTQ1LCJleHAiOjE2MTA5NzY1NDV9.xTcjWfgUV48CB3OHOkIT4kckeeAvzntaTSu9V2j3DZ8
